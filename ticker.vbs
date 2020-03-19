@@ -10,10 +10,10 @@ Sub ticker()
     firstRow = 2
     
     Total = 0
+    
     lastRow = Cells(Rows.count, "A").End(xlUp).Row
     
-   'MsgBox ("Total rows are " & lastRow)
-   
+      
     For i = 2 To lastRow
     
         If Cells(i + 1, 1).Value <> Cells(i, 1).Value Then
@@ -24,8 +24,7 @@ Sub ticker()
             
             Cells(curRow, 10).Value = Total
             
-            'MsgBox ("current Row is" & curRow & " and Total volume is" & Total)
-            
+                        
             Change = Cells(i, 6).Value - Cells(firstRow, 3).Value
             
             Cells(curRow, 11).Value = Change
@@ -36,11 +35,8 @@ Sub ticker()
             Total = 0
             
             firstRow = i + 1
-            
-            
-            
+                 
         Else
-            
             Total = Total + Cells(i, 7).Value
             
         End If
